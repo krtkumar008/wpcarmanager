@@ -1,0 +1,27 @@
+async function getCars(req, res) {
+  let query = Cars.find({});
+  let value = [];
+  if (req.query.carId) {
+    query.where("_id").equals(req.query.carId);
+  }
+  //check booked car's availability after @datetime
+  if (req.query.datetime) {
+    value = await Bookings.find({})
+      .where("endDate")
+      .lt(new Date(req.query.datetime))
+      .exec();
+  }
+  let afterBookingCars = await Cars.find({})
+    .where("_id")
+    .in(value.map(value => value.carId))
+    .exec();
+  console.log(afterBookingCars);
+
+  let availableCars = await Cars.find({})
+    .where("status")
+    .equals("available")
+    .exec();
+  console.log(availableCars);
+
+  res.send({...availableCars,afterBookingCars});
+}
