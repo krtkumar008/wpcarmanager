@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "a73b84b1-7b02-4876-bca3-73686085eca1",
+		"name": "carmanager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"denver\",\n\t\"gender\":\"M\",\n\t\"Address\":\"H223, abc street, shimla\",\n\t\"age\":\"21\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://carmanagerwp.herokuapp.com/users",
+					"protocol": "https",
+					"host": [
+						"carmanagerwp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Car",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"vehicleNumber\":\"afakjdh\",\n\"model\":\"i10\",\n\"vehicleType\":\"med\",\n\"capacity\":\"4\",\n\"rent\":\"200\",\n\"status\":\"available\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://carmanagerwp.herokuapp.com/cars",
+					"protocol": "https",
+					"host": [
+						"carmanagerwp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cars",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://carmanagerwp.herokuapp.com/cars?carId=",
+					"protocol": "https",
+					"host": [
+						"carmanagerwp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"cars"
+					],
+					"query": [
+						{
+							"key": "carId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cars Bookings",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://carmanagerwp.herokuapp.com/cars/bookings?",
+					"protocol": "https",
+					"host": [
+						"carmanagerwp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"cars",
+						"bookings"
+					],
+					"query": [
+						{
+							"key": "model",
+							"value": "scor",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cars filters",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://carmanagerwp.herokuapp.com/cars?datetime=2019-10-17T11:16:53.603Z&capacity=7",
+					"protocol": "https",
+					"host": [
+						"carmanagerwp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"cars"
+					],
+					"query": [
+						{
+							"key": "datetime",
+							"value": "2019-10-17T11:16:53.603Z"
+						},
+						{
+							"key": "capacity",
+							"value": "7"
+						},
+						{
+							"key": "getallcars",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"vehicleNumber\":\"PB02ab4213\",\n\"model\":\"alto\",\n\"vehicleType\":\"Medium\",\n\"capacity\":\"4\",\n\"rent\":\"200\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://carmanagerwp.herokuapp.com/users?userId=",
+					"protocol": "https",
+					"host": [
+						"carmanagerwp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Booking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"carId\":\"5da31ecd3a4d63791065dc37\",\n\"userId\":\"5da31ead3a4d63791065dc33\",\n\"status\":\"Initiated\",\n\"startDate\":\"2019-10-13T11:16:53.603Z\",\n\"endDate\":\"2019-10-16T11:16:53.603Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://carmanagerwp.herokuapp.com/bookings",
+					"protocol": "https",
+					"host": [
+						"carmanagerwp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update booking",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"status\":\"Cancelled\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://carmanagerwp.herokuapp.com/bookings?bookingId=5da31ff7cca4647919709c42",
+					"protocol": "https",
+					"host": [
+						"carmanagerwp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"bookings"
+					],
+					"query": [
+						{
+							"key": "bookingId",
+							"value": "5da31ff7cca4647919709c42"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bookings",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"carId\":\"PB02ab4213\",\n\"userId\":\"alto\",\n\"status\":\"Medium\",\n\"startDate\":\"2019-10-13T11:16:53.603Z\",\n\"endDate\":\"2019-10-13T11:16:53.603Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://carmanagerwp.herokuapp.com/bookings",
+					"protocol": "https",
+					"host": [
+						"carmanagerwp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update car",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"status\":\"available\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://carmanagerwp.herokuapp.com/cars?carId=",
+					"protocol": "https",
+					"host": [
+						"carmanagerwp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"cars"
+					],
+					"query": [
+						{
+							"key": "carId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
